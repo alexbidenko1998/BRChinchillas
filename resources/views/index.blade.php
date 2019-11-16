@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>BR Chinchillas</title>
+    <base href="/">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <script type="text/javascript" >
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(54698890, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/54698890" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+    <style type="text/css">
+        .morphing-btn-wrap {
+            display: inline-block;
+            position: relative;
+            text-align: center;
+        }
+        nav .morphing-btn-wrap {
+            position: absolute;
+            cursor: pointer;
+            right: 5%;
+            top: 50%;
+            transform: translate(-5%, -50%);
+            z-index: 2;
+        }
+
+        .morphing-btn {
+            -webkit-transition: background 0.3s, color 0.2s 0.2s, width 0.2s 0s;
+            -moz-transition: background 0.3s, color 0.2s 0.2s, width 0.2s 0s;
+            -o-transition: background 0.3s, color 0.2s 0.2s, width 0.2s 0s;
+            transition: color 0.3s 0.2s, width 0.2s 0s;
+            white-space: nowrap;
+            box-sizing: border-box;
+        }
+
+        .morphing-btn_circle {
+            color: transparent!important;
+            padding-left: 0;
+            padding-right: 0;
+            width: 35.6px!important;
+
+            /* Override inline style rule */
+            -webkit-transition: color 0.2s 0s, width .3s 0.2s;
+            -moz-transition: color 0.2s 0s, width .3s 0.2s;
+            -o-transition: color 0.2s 0s, width .3s 0.2s;
+            transition: color 0.2s 0s, width .3s 0.2s;
+        }
+
+        .morphing-btn-clone {
+            position: fixed;
+            border-radius: 50%;
+            z-index: 3;
+            -webkit-transition: all 0.5s cubic-bezier(.65, .05, .36, 1);
+            -moz-transition: all 0.5s cubic-bezier(.65, .05, .36, 1);
+            -o-transition: all 0.5s cubic-bezier(.65, .05, .36, 1);
+            transition: all 0.5s cubic-bezier(.65, .05, .36, 1);
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            height: 40px;
+            width: 40px;
+        }
+
+        .morphing-btn-clone_visible {
+            display: block;
+            -webkit-transform: scale(1)!important;
+            -moz-transform: scale(1)!important;
+            -ms-transform: scale(1)!important;
+            -o-transform: scale(1)!important;
+            transform: scale(1)!important;
+        }
+
+        .fancybox-morphing .fancybox-toolbar {
+            top: 20px;
+            right: 40px;
+        }
+
+        .fancybox-morphing .fancybox-button--close {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 50%;
+            color: black;
+        }
+
+        .fancybox-morphing .fancybox-button--close::after,
+        .fancybox-morphing .fancybox-button--close::before {
+            height: 1.55px;
+            width: 22px;
+            left: calc(50% - 11px);
+        }
+
+        .fancybox-morphing .fancybox-button--close:hover {
+            background: rgba(0, 0, 0, 0.25);
+        }
+
+        #morphing-content {
+            margin: 0;
+            position: relative;
+            background: transparent;
+            color: black;
+            padding: 6em 10vw;
+            line-height: 2;
+            z-index: 3;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+        #morphing-content-menu {
+            margin: 0;
+            position: relative;
+            background: transparent;
+            color: black;
+            padding: 0;
+            z-index: 3;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+        .fancybox-morphing .fancybox-bg {
+            opacity: 1;
+        }
+        .fancybox-morphing .fancybox-bg {
+            opacity: 1;
+        }
+        .background-confirm {
+            background: gold;
+        }
+        .background-menu {
+            background: #5b78c7;
+        }
+        .fancybox-slide {
+            padding: 0;
+        }
+
+        #morphing-content a {
+            color: black;
+        }
+    </style>
+    <link rel="stylesheet" href="styles.3ff695c00d717f2d2a11.css"></head>
+<body style="width: 100%; overflow-x: hidden; background-color: aliceblue;">
+<app-root></app-root>
+<script src="runtime-es2015.d5623f03f1e64ac8e12f.js" type="module"></script><script src="polyfills-es2015.9a05c5eeb2c24cb2663d.js" type="module"></script><script src="runtime-es5.a8c9c2928baa49aa82ad.js" nomodule></script><script src="polyfills-es5.7d557f3a1ecba44264aa.js" nomodule></script><script src="main-es2015.9abd8eac7417bbaac8a2.js" type="module"></script><script src="main-es5.55380db00b7b5908e10a.js" nomodule></script></body>
+</html>
