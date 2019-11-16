@@ -22,8 +22,8 @@ class ChinchillasTable extends Migration
             $table->bigInteger('birthday');
             $table->string('adultAvatar');
             $table->string('babyAvatar');
-            $table->json('adultPhotos');
-            $table->json('babyPhotos');
+            $table->string('adultPhotos');
+            $table->string('babyPhotos');
             $table->integer('mother')->nullable();
             $table->integer('father')->nullable();
             $table->integer('status');

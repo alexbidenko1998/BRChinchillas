@@ -11,10 +11,5 @@ class Chinchilla extends Model
         'adultPhotos', 'babyPhotos', 'mother', 'father', 'status'
     ];
 
-    protected $casts = [
-        'adultPhotos' => 'array',
-        'babyPhotos' => 'array'
-    ];
-
     protected $table = 'chinchillas';
 }
