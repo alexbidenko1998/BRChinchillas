@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Chinchilla;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ChinchillasController extends Controller
 {
@@ -20,8 +21,13 @@ class ChinchillasController extends Controller
         foreach ($request->all() as $chinchilla) {
             $chinchilla['adultPhotos'] = json_encode($chinchilla['adultPhotos']);
             $chinchilla['babyPhotos'] = json_encode($chinchilla['babyPhotos']);
-            Chinchilla::create($chinchilla);
+            DB::table("chinchillas")->insert($chinchilla);
         }
+        return Chinchilla::all();
+    }
+
+    function deleteAll(Request $request) {
+        DB::table('chinchillas')->delete();
         return Chinchilla::all();
     }
 }

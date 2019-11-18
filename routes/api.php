@@ -16,11 +16,15 @@ Route::prefix('chinchillas')->group(function() {
     Route::get('/', 'ChinchillasController@get');
 
     Route::post('/all', 'ChinchillasController@addAll');
+
+    Route::delete('/all', 'ChinchillasController@deleteAll');
 });
 
 Route::prefix('purchases')->group(function() {
 
     Route::get('/', 'PurchasesController@get');
 
-    Route::post('/all', 'PurchasesController@addAll');
+    Route::post('/all', 'PurchasesController@getAll');
+
+    Route::delete('/all', 'PurchasesController@deleteAll');
 });
