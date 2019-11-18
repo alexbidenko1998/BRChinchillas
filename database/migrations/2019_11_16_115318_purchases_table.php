@@ -16,11 +16,11 @@ class PurchasesTable extends Migration
         Schema::create('purchases', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('chinchillaId');
-            $table->string('description_ru');
-            $table->string('description_en');
-            $table->integer('rubles');
-            $table->integer('euros');
-            $table->integer('status');
+            $table->string('description_ru')->nullable();
+            $table->string('description_en')->nullable();
+            $table->integer('rubles')->nullable();
+            $table->integer('euros')->nullable();
+            $table->integer('status')->nullable();
             $table->timestamps();
         });
     }

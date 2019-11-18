@@ -15,18 +15,18 @@ class ChinchillasTable extends Migration
     {
         Schema::create('chinchillas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name_ru');
-            $table->string('name_en');
-            $table->string('description_ru');
-            $table->string('description_en');
-            $table->bigInteger('birthday');
-            $table->string('adultAvatar');
-            $table->string('babyAvatar');
-            $table->string('adultPhotos');
-            $table->string('babyPhotos');
+            $table->string('name_ru')->nullable();
+            $table->string('name_en')->nullable();
+            $table->string('description_ru')->nullable();
+            $table->string('description_en')->nullable();
+            $table->bigInteger('birthday')->nullable();
+            $table->string('adultAvatar')->nullable();
+            $table->string('babyAvatar')->nullable();
+            $table->string('adultPhotos')->nullable();
+            $table->string('babyPhotos')->nullable();
             $table->integer('mother')->nullable();
             $table->integer('father')->nullable();
-            $table->integer('status');
+            $table->integer('status')->nullable();
             $table->timestamps();
         });
     }
