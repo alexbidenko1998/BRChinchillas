@@ -24,7 +24,7 @@ Route::prefix('purchases')->group(function() {
 
     Route::get('/', 'PurchasesController@get');
 
-    Route::post('/all', 'PurchasesController@getAll');
+    Route::post('/all', 'PurchasesController@addAll');
 
     Route::delete('/all', 'PurchasesController@deleteAll');
 });
