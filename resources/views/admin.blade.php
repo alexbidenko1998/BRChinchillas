@@ -269,22 +269,18 @@
                 for (let i in photos) {
                     let fd = new FormData();
                     fd.append("file", photos[i]);
-                    $.ajax({
-                        url: "/api/file",
-                        type: "POST",
-                        processData: false,
-                        contentType: false,
-                        data: fd,
-                        success(data) {
-                            console.log(data);
-                            if(which === 1) {
-                                BRApp.redactedChinchilla.adultPhotos.push(JSON.parse(data).filename);
-                            } else {
-                                BRApp.redactedChinchilla.babyPhotos.push(JSON.parse(data).filename);
-                            }
+                    fetch('/api/file', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded',
                         },
-                        error(data) {
-                            console.log(data);
+                        body: fd
+                    }).then(response => response.json()).then(data => {
+                        console.log(data);
+                        if(which === 1) {
+                            BRApp.redactedChinchilla.adultPhotos.push(JSON.parse(data).filename);
+                        } else {
+                            BRApp.redactedChinchilla.babyPhotos.push(JSON.parse(data).filename);
                         }
                     });
                 }
