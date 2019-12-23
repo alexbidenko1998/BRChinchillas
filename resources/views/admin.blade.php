@@ -276,6 +276,7 @@
                         contentType: false,
                         data: fd,
                         success(data) {
+                            console.log(data);
                             if(which === 1) {
                                 BRApp.redactedChinchilla.adultPhotos.push(JSON.parse(data).filename);
                             } else {
