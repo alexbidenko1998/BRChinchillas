@@ -12,7 +12,6 @@
 <body>
 
 <div id="BRApp">
-
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 col-md-6">
@@ -28,8 +27,8 @@
                             <img class="w-100" v-else-if="!!chinchilla.babyAvatar" :src="'photos/chinchillas/' + chinchilla.babyAvatar">
                         </div>
                         <div class="col-8">
-                            <h6>\{\{chinchilla.name_ru}}</h6>
-                            <p>\{\{chinchilla.description_ru}}</p>
+                            <h6>@{{chinchilla.name_ru}}</h6>
+                            <p>@{{chinchilla.description_ru}}</p>
                         </div>
                     </div>
                 </div>
@@ -43,8 +42,8 @@
                      data-toggle="modal" data-target="#redactPurchaseModal">
                     <div class="row">
                         <div class="col-8">
-                            <h6>\{\{chinchillaName(purchase.chinchillaId)}} - \{\{purchase.rubles}} - \{\{purchase.euros}}</h6>
-                            <p>\{\{purchase.description_ru}}</p>
+                            <h6>@{{chinchillaName(purchase.chinchillaId)}} - @{{purchase.rubles}} - @{{purchase.euros}}</h6>
+                            <p>@{{purchase.description_ru}}</p>
                         </div>
                     </div>
                 </div>
@@ -114,14 +113,14 @@
                         <label>Мама</label>
                         <select class="form-control" v-model="redactedChinchilla.mother">
                             <option value="0">Не указано</option>
-                            <option v-for="chinchilla in chinchillas" :value="chinchilla.id">\{\{chinchilla.name}}</option>
+                            <option v-for="chinchilla in chinchillas" :value="chinchilla.id">@{{chinchilla.name}}</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label>Папа</label>
                         <select class="form-control" v-model="redactedChinchilla.father">
                             <option value="0">Не указано</option>
-                            <option v-for="chinchilla in chinchillas" :value="chinchilla.id">\{\{chinchilla.name}}</option>
+                            <option v-for="chinchilla in chinchillas" :value="chinchilla.id">@{{chinchilla.name}}</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -157,7 +156,7 @@
                         <label>Шиншилла</label>
                         <select class="form-control" v-model="redactedPurchase.chinchillaId">
                             <option value="0">Не указано</option>
-                            <option v-for="chinchilla in chinchillas" :value="chinchilla.id">\{\{chinchilla.name_ru}}</option>
+                            <option v-for="chinchilla in chinchillas" :value="chinchilla.id">@{{chinchilla.name_ru}}</option>
                         </select>
                     </div>
                     <div class="form-group">
