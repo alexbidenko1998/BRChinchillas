@@ -12,6 +12,23 @@ class PurchasesController extends Controller
         return Purchase::all();
     }
 
+    function add(Request $request) {
+        $purchase = $request->all();
+        $purchase['id'] = DB::table('purchases')->insertGetId($purchase);
+        return $purchase;
+    }
+
+    function update($id, Request $request) {
+        $purchase = $request->all();
+        DB::table('purchases')->where('id', $id)->update($purchase);
+        return $purchase;
+    }
+
+    function delete($id) {
+        DB::table('purchases')->where('id', $id)->delete();
+        return ['success' => true];
+    }
+
     function addAll(Request $request) {
         foreach ($request->all() as $purchase) {
             DB::table("purchases")->insert($purchase);
