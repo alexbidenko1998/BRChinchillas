@@ -66,11 +66,13 @@ return [
 
         'public_temporary_photos' => [
             'driver' => 'local',
-            'root' => public_path('photos/temporary')
+            'root' => public_path('photos/temporary'),
+            'visibility' => 'public',
         ],
         'public_photos' => [
             'driver' => 'local',
-            'root' => public_path('photos/chinchillas')
+            'root' => public_path('photos/chinchillas'),
+            'visibility' => 'public',
         ],
 
     ],

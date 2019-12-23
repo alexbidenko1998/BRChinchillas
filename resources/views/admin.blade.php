@@ -275,9 +275,6 @@
                         processData: false,
                         contentType: false,
                         data: fd,
-                        headers: {
-                            'Content-Type': 'multipart/form-data'
-                        },
                         success(data) {
                             console.log(data);
                             if(which === 1) {
