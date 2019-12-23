@@ -272,7 +272,7 @@
                     fetch('/api/file', {
                         method: 'POST',
                         headers: {
-                            'Content-Type': 'application/x-www-form-urlencoded',
+                            'Content-Type': 'multipart/form-data',
                         },
                         body: fd
                     }).then(response => response.json()).then(data => {
