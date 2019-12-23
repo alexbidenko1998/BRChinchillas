@@ -265,10 +265,10 @@
             uploadPhotos: function (event, which) {
                 let photos = event.target.files;
                 console.log(event);
-                console.log(photos);
                 for (let i in photos) {
                     let fd = new FormData();
-                    fd.append("file", photos[i]);
+                    console.log(photos[i]);
+                    fd.append("photo", photos[i]);
                     fetch('/api/file', {
                         method: 'POST',
                         headers: {
