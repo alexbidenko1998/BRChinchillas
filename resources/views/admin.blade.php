@@ -282,6 +282,9 @@
                             } else {
                                 BRApp.redactedChinchilla.babyPhotos.push(JSON.parse(data).filename);
                             }
+                        },
+                        error(data) {
+                            console.log(data);
                         }
                     });
                 }
