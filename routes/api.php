@@ -44,6 +44,8 @@ Route::prefix('purchases')->group(function() {
 Route::prefix('file')->group(function() {
 
     Route::post('/', 'FileController@uploadFile');
+
+    Route::get('/{filename}', 'FileController@getFile');
 });
 
 Route::get('/admin/020710', function () {

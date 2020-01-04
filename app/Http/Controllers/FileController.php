@@ -12,4 +12,14 @@ class FileController extends Controller
         $request->file('photo')->storeAs('', $path, 'public_temporary_photos');
         return ['filename' => $path];
     }
+
+    function getFile($filename) {
+        if(Storage::disk('public_temporary_photos')->exists($filename)) {
+            return Storage::disk('public_temporary_photos')->download($filename);
+        } elseif(Storage::disk('public_photos')->exists($filename)) {
+            return Storage::disk('public_photos')->download($filename);
+        } else {
+            abort(404);
+        }
+    }
 }

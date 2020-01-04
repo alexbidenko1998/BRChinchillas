@@ -23,8 +23,8 @@
                      data-toggle="modal" data-target="#redactChinchillaModal">
                     <div class="row">
                         <div class="col-4" >
-                            <img class="w-100" v-if="!!chinchilla.adultAvatar" :src="'/photos/chinchillas/' + chinchilla.adultAvatar">
-                            <img class="w-100" v-else-if="!!chinchilla.babyAvatar" :src="'/photos/chinchillas/' + chinchilla.babyAvatar">
+                            <img class="w-100" v-if="!!chinchilla.adultAvatar" :src="'/api/file/' + chinchilla.adultAvatar">
+                            <img class="w-100" v-else-if="!!chinchilla.babyAvatar" :src="'/api/file/' + chinchilla.babyAvatar">
                         </div>
                         <div class="col-8">
                             <h6>@{{chinchilla.name_ru}}</h6>
@@ -81,13 +81,13 @@
 
                     <p>Взрослые изображения и аватарка</p>
                     <div class="position-relative">
-                        <img v-if="!!redactedChinchilla.adultAvatar" :src="'/photos/chinchillas/' + redactedChinchilla.adultAvatar" class="w-100 border">
+                        <img v-if="!!redactedChinchilla.adultAvatar" :src="'/api/file/' + redactedChinchilla.adultAvatar" class="w-100 border">
                         <button @click="redactedChinchilla.adultAvatar = ''"
                                 style="position: absolute; top: 0; right: 0;">Удалить</button>
                     </div>
                     <div class="row">
                         <div class="col-4 position-relative" v-for="(photo, index) in redactedChinchilla.adultPhotos">
-                            <img :src="'/photos/chinchillas/' + photo" class="w-100" @click="redactedChinchilla.adultAvatar = photo">
+                            <img :src="'/api/file/' + photo" class="w-100" @click="redactedChinchilla.adultAvatar = photo">
                             <button @click="removePhoto(index, true)"
                                     style="position: absolute; top: 0; right: 0;">Удалить</button>
                         </div>
@@ -96,13 +96,13 @@
 
                     <p>Детские изображения и аватарка</p>
                     <div class="position-relative">
-                        <img v-if="!!redactedChinchilla.babyAvatar" :src="'/photos/chinchillas/' + redactedChinchilla.babyAvatar" class="w-100 border">
+                        <img v-if="!!redactedChinchilla.babyAvatar" :src="'/api/file/' + redactedChinchilla.babyAvatar" class="w-100 border">
                         <button @click="redactedChinchilla.babyAvatar = ''"
                                 style="position: absolute; top: 0; right: 0;">Удалить</button>
                     </div>
                     <div class="row">
                         <div class="col-4" v-for="photo in redactedChinchilla.babyPhotos">
-                            <img :src="'/photos/chinchillas/' + photo" class="w-100" @click="redactedChinchilla.babyAvatar = photo">
+                            <img :src="'/api/file/' + photo" class="w-100" @click="redactedChinchilla.babyAvatar = photo">
                             <button @click="removePhoto(index, false)"
                                     style="position: absolute; top: 0; right: 0;">Удалить</button>
                         </div>

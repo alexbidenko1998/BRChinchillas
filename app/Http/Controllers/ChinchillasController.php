@@ -43,8 +43,8 @@ class ChinchillasController extends Controller
         forEach ($chinchilla['adultPhotos'] as $photo) {
             if(in_array($photo, $oldChinchilla->adultPhotos)) {
                 try {
-                    Storage::disk('public_photos')->put('new/file1.jpg',
-                        Storage::disk('public_temporary_photos')->get('old/file1.jpg'));
+                    Storage::disk('public_photos')->put($photo,
+                        Storage::disk('public_temporary_photos')->get($photo));
                 } catch (FileNotFoundException $e) {}
             }
         }
@@ -57,8 +57,8 @@ class ChinchillasController extends Controller
         forEach ($chinchilla['babyPhotos'] as $photo) {
             if(in_array($photo, $oldChinchilla->babyPhotos)) {
                 try {
-                    Storage::disk('public_photos')->put('new/file1.jpg',
-                        Storage::disk('public_temporary_photos')->get('old/file1.jpg'));
+                    Storage::disk('public_photos')->put($photo,
+                        Storage::disk('public_temporary_photos')->get($photo));
                 } catch (FileNotFoundException $e) {}
             }
         }
