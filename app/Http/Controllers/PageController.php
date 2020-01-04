@@ -10,8 +10,11 @@ class PageController extends Controller
     function getChinchillaPage($type, $chinchillaId) {
         $chinchilla = DB::table('chinchillas')->where('id', $chinchillaId)->first();
         return response()->view('index', [
-            'title' => ' - ' . ($type == 'purchase' ? 'Купить ' : 'Шиншилла ') . $chinchilla->name_ru,
-            'description' => $chinchilla->description_ru
+            'title' => ($type == 'purchase' ? 'Купить ' : 'Шиншилла ') . $chinchilla->name_ru,
+            'description' => ($type == 'purchase' ? 'Купить ' : 'Шиншилла ') . $chinchilla->description_ru,
+            'image' => ($type == 'babies' ? $chinchilla->babyAvatar :
+                (isset($chinchilla->adultAvatar) ? $chinchilla->adultAvatar : $chinchilla->babyAvatar)
+            )
         ]);
     }
 
