@@ -32,7 +32,7 @@
     @foreach ($babies as $items)
         @foreach ($items as $id)
             <url>
-                <loc>https://br-chinchillas.ru/chinchilla/babies/{{ $aduidltId }}</loc>
+                <loc>https://br-chinchillas.ru/chinchilla/babies/{{ $id }}</loc>
             </url>
         @endforeach
     @endforeach
