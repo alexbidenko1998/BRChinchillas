@@ -11,7 +11,7 @@ class PageController extends Controller
         $chinchilla = DB::table('chinchillas')->where('id', $chinchillaId)->first();
         return response()->view('index', [
             'title' => ' - ' . ($type == 'purchase' ? 'Купить ' : 'Шиншилла ') . $chinchilla->name_ru,
-            'description' => $chinchilla->description
+            'description' => $chinchilla->description_ru
         ]);
     }
 
