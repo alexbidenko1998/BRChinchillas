@@ -36,12 +36,12 @@ class ChinchillasController extends Controller
         $oldChinchilla->babyPhotos = json_decode($oldChinchilla->babyPhotos);
 
         forEach ($oldChinchilla->adultPhotos as $photo) {
-            if(in_array($photo, $chinchilla['adultPhotos'])) {
+            if(!in_array($photo, $chinchilla['adultPhotos'])) {
                 Storage::disk('public_photos')->delete($photo);
             }
         }
         forEach ($chinchilla['adultPhotos'] as $photo) {
-            if(in_array($photo, $oldChinchilla->adultPhotos)) {
+            if(!in_array($photo, $oldChinchilla->adultPhotos)) {
                 if(Storage::disk('public_temporary_photos')->exists($photo)) {
                     Storage::disk('public_photos_root')->move('temporary/'.$photo, 'chinchillas/'.$photo);
                 }
@@ -49,12 +49,12 @@ class ChinchillasController extends Controller
         }
 
         forEach ($oldChinchilla->babyPhotos as $photo) {
-            if(in_array($photo, $chinchilla['babyPhotos'])) {
+            if(!in_array($photo, $chinchilla['babyPhotos'])) {
                 Storage::disk('public_photos')->delete($photo);
             }
         }
         forEach ($chinchilla['babyPhotos'] as $photo) {
-            if(in_array($photo, $oldChinchilla->babyPhotos)) {
+            if(!in_array($photo, $oldChinchilla->babyPhotos)) {
                 if(Storage::disk('public_temporary_photos')->exists($photo)) {
                     Storage::disk('public_photos_root')->move('temporary/'.$photo, 'chinchillas/'.$photo);
                 }
