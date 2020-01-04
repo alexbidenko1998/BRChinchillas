@@ -271,16 +271,13 @@
                     fd.append("photo", photos[i]);
                     fetch('/api/file', {
                         method: 'POST',
-                        headers: {
-                            'Content-Type': 'multipart/form-data',
-                        },
                         body: fd
                     }).then(response => response.json()).then(data => {
                         console.log(data);
                         if(which === 1) {
-                            BRApp.redactedChinchilla.adultPhotos.push(JSON.parse(data).filename);
+                            BRApp.redactedChinchilla.adultPhotos.push(data.filename);
                         } else {
-                            BRApp.redactedChinchilla.babyPhotos.push(JSON.parse(data).filename);
+                            BRApp.redactedChinchilla.babyPhotos.push(data.filename);
                         }
                     });
                 }
