@@ -14,7 +14,7 @@
     <meta property="og:title" content="{{$title ?? ''}}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://br-chinchillas.ru">
-    <meta property="og:image" content="https://br-chinchillas/photos/chinchillas/{{$image ?? ''}}">
+    <meta property="og:image" content="https://br-chinchillas.ru/photos/chinchillas/{{$image ?? ''}}">
     <meta property="og:description" content="{{$description ?? ''}}">
 
     <script type="text/javascript" >
