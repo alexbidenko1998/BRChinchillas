@@ -44,7 +44,7 @@ class ChinchillasController extends Controller
             if(in_array($photo, $oldChinchilla->adultPhotos)) {
                 try {
                     Storage::disk('public_photos_root')->move('temporary/'.$photo, 'chinchillas/'.$photo);
-                } catch (FileNotFoundException $e) {}
+                } catch (\Exception $e) {}
             }
         }
 
@@ -57,7 +57,7 @@ class ChinchillasController extends Controller
             if(in_array($photo, $oldChinchilla->babyPhotos)) {
                 try {
                     Storage::disk('public_photos_root')->move('temporary/'.$photo, 'chinchillas/'.$photo);
-                } catch (FileNotFoundException $e) {}
+                } catch (\Exception $e) {}
             }
         }
 
