@@ -2,11 +2,14 @@
 <html lang="ru">
 <head>
     <meta charset="utf-8">
-    <title>BR Chinchillas</title>
+    <title>BR Chinchillas{{$title or ''}}</title>
     <base href="/">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <meta name="title" property="{{$title or ''}}">
+    <meta name="description" property="{{$description or ''}}">
 
     <script type="text/javascript" >
         (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};

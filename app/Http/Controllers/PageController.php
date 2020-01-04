@@ -7,6 +7,14 @@ use Illuminate\Support\Facades\DB;
 
 class PageController extends Controller
 {
+    function getChinchillaPage($type, $chinchillaId) {
+        $chinchilla = DB::table('chinchillas')->where('id', $chinchillaId)->first();
+        return response()->view('index', [
+            'title' => ' - ' . ($type == 'purchase' ? 'Купить ' : 'Шиншилла ') . $chinchilla->name_ru,
+            'description' => $chinchilla->description
+        ]);
+    }
+
     function getSitemap() {
         return response()->view('sitemap', [
             'adults' => (array) DB::table('chinchillas')->whereIn('status', [2, 3])->pluck('id'),
