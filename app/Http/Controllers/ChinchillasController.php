@@ -42,9 +42,9 @@ class ChinchillasController extends Controller
         }
         forEach ($chinchilla['adultPhotos'] as $photo) {
             if(in_array($photo, $oldChinchilla->adultPhotos)) {
-                try {
+                if(Storage::disk('public_temporary_photos')->exists($photo)) {
                     Storage::disk('public_photos_root')->move('temporary/'.$photo, 'chinchillas/'.$photo);
-                } catch (\Exception $e) {}
+                }
             }
         }
 
@@ -55,9 +55,9 @@ class ChinchillasController extends Controller
         }
         forEach ($chinchilla['babyPhotos'] as $photo) {
             if(in_array($photo, $oldChinchilla->babyPhotos)) {
-                try {
+                if(Storage::disk('public_temporary_photos')->exists($photo)) {
                     Storage::disk('public_photos_root')->move('temporary/'.$photo, 'chinchillas/'.$photo);
-                } catch (\Exception $e) {}
+                }
             }
         }
 
