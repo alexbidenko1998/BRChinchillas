@@ -11,6 +11,8 @@
 |
 */
 
+Route::get('/Sitemap.xml', 'PageController@getSitemap');
+
 Route::get('/', function () {
     return view('index');
 });

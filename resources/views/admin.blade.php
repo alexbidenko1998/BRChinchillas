@@ -113,14 +113,14 @@
                         <label>Мама</label>
                         <select class="form-control" v-model="redactedChinchilla.mother">
                             <option value="0">Не указано</option>
-                            <option v-for="chinchilla in chinchillas" :value="chinchilla.id">@{{chinchilla.name}}</option>
+                            <option v-for="chinchilla in chinchillas" :value="chinchilla.id">@{{chinchilla.name_ru}}</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label>Папа</label>
                         <select class="form-control" v-model="redactedChinchilla.father">
                             <option value="0">Не указано</option>
-                            <option v-for="chinchilla in chinchillas" :value="chinchilla.id">@{{chinchilla.name}}</option>
+                            <option v-for="chinchilla in chinchillas" :value="chinchilla.id">@{{chinchilla.name_ru}}</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -129,7 +129,7 @@
                             <option value="1">Малыш</option>
                             <option value="2">Взрослый</option>
                             <option value="3">Малыш и Взрослый</option>
-                            <option value="3">Скрыт</option>
+                            <option value="4">Скрыт</option>
                         </select>
                     </div>
                 </div>
