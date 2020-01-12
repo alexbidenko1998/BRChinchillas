@@ -23,8 +23,8 @@
                      data-toggle="modal" data-target="#redactChinchillaModal">
                     <div class="row">
                         <div class="col-4" >
-                            <img class="w-100" v-if="!!chinchilla.adultAvatar" :src="'/api/file/' + chinchilla.adultAvatar">
-                            <img class="w-100" v-else-if="!!chinchilla.babyAvatar" :src="'/api/file/' + chinchilla.babyAvatar">
+                            <img class="w-100" v-if="!!chinchilla.adultAvatar" :src="'/photos/chinchillas/' + chinchilla.adultAvatar">
+                            <img class="w-100" v-else-if="!!chinchilla.babyAvatar" :src="'/photos/chinchillas/' + chinchilla.babyAvatar">
                         </div>
                         <div class="col-8">
                             <h6>@{{chinchilla.name_ru}}</h6>
