@@ -342,7 +342,7 @@
                 let url;
                 let type;
                 if (this.redactedPurchase.id != null) {
-                    url = "/api/purchases/" + this.redactedChinchilla.id;
+                    url = "/api/purchases/" + this.redactedPurchase.id;
                     type = "PUT";
                 } else {
                     url = "/api/purchases";
