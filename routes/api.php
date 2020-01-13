@@ -51,3 +51,5 @@ Route::prefix('file')->group(function() {
 Route::get('/admin/020710', function () {
     return view('admin');
 });
+
+Route::post('/mail', 'FileController@sendBackMessage');
