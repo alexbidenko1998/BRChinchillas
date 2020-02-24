@@ -42,8 +42,8 @@
     <link rel="manifest" href="manifest.webmanifest">
     <meta name="theme-color" content="#1976d2">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.5d81f9cfe8fdf3ea6894.css"></head>
+    <link rel="stylesheet" href="styles.26d56490d761e127af5c.css"></head>
 <body style="width: 100%; overflow-x: hidden; background-color: aliceblue;">
 <app-root></app-root>
-<script src="runtime-es2015.015f455fa3598f58b5bb.js" type="module"></script><script src="polyfills-es2015.66baa76b59ee642be794.js" type="module"></script><script src="runtime-es5.6e2ef991060728685368.js" nomodule></script><script src="polyfills-es5.85579e2789db18676bdd.js" nomodule></script><script src="main-es2015.2fbb1c9ef798749457a0.js" type="module"></script><script src="main-es5.81a8fc7efef149026287.js" nomodule></script></body>
+<script src="runtime-es2015.0811dcefd377500b5b1a.js" type="module"></script><script src="runtime-es5.0811dcefd377500b5b1a.js" nomodule defer></script><script src="polyfills-es5.ad81c68d1c3d7a0429f1.js" nomodule defer></script><script src="polyfills-es2015.ca64e4516afbb1b890d5.js" type="module"></script><script src="main-es2015.ec3a5999c04bc9c061bf.js" type="module"></script><script src="main-es5.ec3a5999c04bc9c061bf.js" nomodule defer></script></body>
 </html>
