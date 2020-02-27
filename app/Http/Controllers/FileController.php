@@ -12,7 +12,6 @@ class FileController extends Controller
 {
 
     function uploadFile(Request $request) {
-        return dd($request);
         $request->validate([
             'photo' => ['required', 'image', 'mimes:jpeg,jpg,png'],
         ]);
