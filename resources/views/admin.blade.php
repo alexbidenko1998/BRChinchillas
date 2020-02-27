@@ -280,7 +280,7 @@
                             }
                         });
                     };
-                    fr.readAsArrayBuffer(file);
+                    fr.readAsDataURL(file);
                 }
             },
             removePhoto: function(index, isAdult) {
