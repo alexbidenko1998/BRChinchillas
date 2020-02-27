@@ -19,8 +19,13 @@ class FileController extends Controller
 //        $path = '' . time() . '_' . Str::random(8) . '.' . $info['extension'];
 //        move_uploaded_file($_FILES['photo']['tmp_name'], public_path('photos/temporary'));
 
-        $path = '' . time() . '_' . Str::random(8) . '.' . $request->photo->getClientOriginalExtension();
-        $request->photo->storeAs('', $path, 'public_temporary_photos');
+        $path = '' . time() . '_' . Str::random(8) . '.jpeg'/* . $request->photo->getClientOriginalExtension()*/;
+//        $request->photo->storeAs('', $path, 'public_temporary_photos');
+
+//        $data = substr($request->photo, strpos($request->photo, ','));
+
+        $data = base64_decode($request->photo);
+        Storage::disk('public_temporary_photos')->put($path, $data);
         return ['filename' => $path];
     }
 

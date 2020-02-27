@@ -264,20 +264,23 @@
                 let photos = event.target.files;
                 console.log(event);
                 for (let file of photos) {
-                    let fd = new FormData();
-                    console.log(file);
-                    fd.append("photo", file);
-                    fetch('/api/file', {
-                        method: 'POST',
-                        body: fd
-                    }).then(response => response.json()).then(data => {
-                        console.log(data);
-                        if(which === 1) {
-                            BRApp.redactedChinchilla.adultPhotos.push(data.filename);
-                        } else {
-                            BRApp.redactedChinchilla.babyPhotos.push(data.filename);
-                        }
-                    });
+                    const fr = new FileReader();
+                    fr.onload = () => {
+                        let fd = new FormData();
+                        fd.append("photo", fr.result.toString());
+                        fetch('/api/file', {
+                            method: 'POST',
+                            body: fd
+                        }).then(response => response.json()).then(data => {
+                            console.log(data);
+                            if(which === 1) {
+                                BRApp.redactedChinchilla.adultPhotos.push(data.filename);
+                            } else {
+                                BRApp.redactedChinchilla.babyPhotos.push(data.filename);
+                            }
+                        });
+                    };
+                    fr.readAsArrayBuffer(file);
                 }
             },
             removePhoto: function(index, isAdult) {
