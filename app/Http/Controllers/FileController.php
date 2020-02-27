@@ -15,6 +15,8 @@ class FileController extends Controller
             'photo' => ['image', 'mimes:jpeg,jpg,png'],
         ]);
 
+        return $request;
+
         $path = '' . time() . '_' . Str::random(8) . '.' . $request->photo->getClientOriginalExtension();
         $request->photo->storeAs('', $path, 'public_temporary_photos');
         return ['filename' => $path];
