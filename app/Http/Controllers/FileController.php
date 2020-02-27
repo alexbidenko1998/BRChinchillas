@@ -12,9 +12,15 @@ class FileController extends Controller
 {
 
     function uploadFile(Request $request) {
-        $info = pathinfo($_FILES['photo']['name']);
-        $path = '' . time() . '_' . Str::random(8) . '.' . $info['extension'];
-        move_uploaded_file($_FILES['photo']['tmp_name'], public_path('photos/temporary'));
+//        $request->validate([
+//            'photo' => ['required', 'image', 'mimes:jpeg,jpg,png'],
+//        ]);
+//        $info = pathinfo($_FILES['photo']['name']);
+//        $path = '' . time() . '_' . Str::random(8) . '.' . $info['extension'];
+//        move_uploaded_file($_FILES['photo']['tmp_name'], public_path('photos/temporary'));
+
+        $path = '' . time() . '_' . Str::random(8) . '.' . $request->photo->getClientOriginalExtension();
+        $request->photo->storeAs('', $path, 'public_temporary_photos');
         return ['filename' => $path];
     }
 
