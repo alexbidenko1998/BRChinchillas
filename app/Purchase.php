@@ -11,4 +11,5 @@ class Purchase extends Model
     ];
 
     protected $table = 'purchases';
+    public $timestamps = false;
 }

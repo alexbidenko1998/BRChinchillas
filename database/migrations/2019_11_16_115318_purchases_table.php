@@ -21,7 +21,6 @@ class PurchasesTable extends Migration
             $table->integer('rubles')->nullable();
             $table->integer('euros')->nullable();
             $table->integer('status')->nullable();
-            $table->timestamps();
         });
     }
 

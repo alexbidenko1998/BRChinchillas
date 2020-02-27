@@ -11,29 +11,16 @@ use Illuminate\Support\Facades\Storage;
 class ChinchillasController extends Controller
 {
     function get() {
-        $chinchillas = Chinchilla::all();
-        for($i = 0; $i < count($chinchillas); $i++) {
-            $chinchillas[$i]->adultPhotos = json_decode($chinchillas[$i]->adultPhotos);
-            $chinchillas[$i]->babyPhotos = json_decode($chinchillas[$i]->babyPhotos);
-        }
-        return $chinchillas;
+        return Chinchilla::all();
     }
 
     function add(Request $request) {
-        $chinchilla = $request->all();
-        $chinchilla['adultPhotos'] = json_encode($chinchilla['adultPhotos']);
-        $chinchilla['babyPhotos'] = json_encode($chinchilla['babyPhotos']);
-        $chinchilla['id'] = DB::table("chinchillas")->insertGetId($chinchilla);
-        $chinchilla['adultPhotos'] = json_decode($chinchilla['adultPhotos']);
-        $chinchilla['babyPhotos'] = json_decode($chinchilla['babyPhotos']);
-        return $chinchilla;
+        return Chinchilla::create($request->all());
     }
 
     function update($id, Request $request) {
         $chinchilla = $request->all();
-        $oldChinchilla = DB::table('chinchillas')->where('id', $id)->first();
-        $oldChinchilla->adultPhotos = json_decode($oldChinchilla->adultPhotos);
-        $oldChinchilla->babyPhotos = json_decode($oldChinchilla->babyPhotos);
+        $oldChinchilla = Chinchilla::whereId($id)->first();
 
         forEach ($oldChinchilla->adultPhotos as $photo) {
             if(!in_array($photo, $chinchilla['adultPhotos'])) {
@@ -64,9 +51,8 @@ class ChinchillasController extends Controller
         $chinchilla['adultPhotos'] = json_encode($chinchilla['adultPhotos']);
         $chinchilla['babyPhotos'] = json_encode($chinchilla['babyPhotos']);
         DB::table("chinchillas")->where('id', $id)->update($chinchilla);
-        $chinchilla['adultPhotos'] = json_decode($chinchilla['adultPhotos']);
-        $chinchilla['babyPhotos'] = json_decode($chinchilla['babyPhotos']);
-        return $chinchilla;
+
+        return Chinchilla::whereId($id)->first();
     }
 
     function delete($id) {

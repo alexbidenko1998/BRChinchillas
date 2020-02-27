@@ -13,9 +13,7 @@ class PurchasesController extends Controller
     }
 
     function add(Request $request) {
-        $purchase = $request->all();
-        $purchase['id'] = DB::table('purchases')->insertGetId($purchase);
-        return $purchase;
+        return Purchase::create($request->all());
     }
 
     function update($id, Request $request) {

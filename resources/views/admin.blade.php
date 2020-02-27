@@ -255,20 +255,16 @@
                 };
             },
             openChinchilla: function (id) {
-                for (let i in this.chinchillas) {
-                    if (this.chinchillas[i].id === id) {
-                        this.redactedChinchilla = this.chinchillas[i];
-                        this.redactedChinchilla.birthday = dateFormat(this.redactedChinchilla.birthday);
-                    }
-                }
+                this.redactedChinchilla = Object.assign({}, this.chinchillas.find(el => el.id === id));
+                this.redactedChinchilla.birthday = dateFormat(this.redactedChinchilla.birthday);
             },
             uploadPhotos: function (event, which) {
                 let photos = event.target.files;
                 console.log(event);
-                for (let i in photos) {
+                for (let file of photos) {
                     let fd = new FormData();
-                    console.log(photos[i]);
-                    fd.append("photo", photos[i]);
+                    console.log(file);
+                    fd.append("photo", file);
                     fetch('/api/file', {
                         method: 'POST',
                         body: fd
@@ -332,11 +328,7 @@
                 };
             },
             openPurchase: function (id) {
-                for (let i in this.purchases) {
-                    if (this.purchases[i].id === id) {
-                        this.redactedPurchase = this.purchases[i];
-                    }
-                }
+                this.redactedPurchase = Object.assign({}, this.purchases.find(el => el.id === id));
             },
             savePurchase: function () {
                 let url;
@@ -366,27 +358,23 @@
                 });
             },
             chinchillaName: function(id) {
-                for(let i in this.chinchillas) {
-                    if(id === this.chinchillas[i].id) {
-                        return this.chinchillas[i].name_ru;
-                    }
-                }
+                return this.chinchillas.find(el => el.id === id).name_ru;
             },
-            deleteChinchilla: function(id) {
+            deleteChinchilla: function() {
                 $.ajax({
-                    url: "/api/chinchillas/" + id,
+                    url: "/api/chinchillas/" + BRApp.redactedChinchilla.id,
                     type: "DELETE",
                     success(data) {
-                        BRApp.chinchillas.splice(id, 1);
+                        BRApp.chinchillas = BRApp.chinchillas.filter(el => el.id !== BRApp.redactedChinchilla.id);
                     }
                 });
             },
-            deletePurchase: function(id) {
+            deletePurchase: function() {
                 $.ajax({
-                    url: "/api/purchases/" + id,
+                    url: "/api/purchases/" + BRApp.redactedPurchase.id,
                     type: "DELETE",
                     success(data) {
-                        BRApp.purchases.splice(id, 1);
+                        BRApp.purchases = BRApp.purchases.filter(el => el.id !== BRApp.redactedPurchase.id);
                     }
                 });
             }

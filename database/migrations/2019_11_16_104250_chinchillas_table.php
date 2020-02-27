@@ -27,7 +27,6 @@ class ChinchillasTable extends Migration
             $table->integer('mother')->nullable();
             $table->integer('father')->nullable();
             $table->integer('status')->nullable();
-            $table->timestamps();
         });
     }
 
