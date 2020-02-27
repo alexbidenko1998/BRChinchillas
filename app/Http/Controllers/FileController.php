@@ -12,9 +12,9 @@ class FileController extends Controller
 {
 
     function uploadFile(Request $request) {
-        $request->validate([
-            'photo' => ['required', 'image', 'mimes:jpeg,jpg,png'],
-        ]);
+//        $request->validate([
+//            'photo' => ['required', 'image', 'mimes:jpeg,jpg,png'],
+//        ]);
 
         $path = '' . time() . '_' . Str::random(8) . '.' . $request->file('photo')->getClientOriginalExtension();
         $request->file('photo')->storeAs('', $path, 'public_temporary_photos');
