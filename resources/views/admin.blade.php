@@ -209,6 +209,7 @@
             return date;
         }
     };
+
     const BRApp = new Vue({
         el: "#BRApp",
         data: {
@@ -256,6 +257,7 @@
             },
             openChinchilla: function (id) {
                 this.redactedChinchilla = Object.assign({}, this.chinchillas.find(el => el.id === id));
+                console.log(this.redactedChinchilla);
                 this.redactedChinchilla.birthday = dateFormat(this.redactedChinchilla.birthday);
             },
             uploadPhotos: function (event, which) {
