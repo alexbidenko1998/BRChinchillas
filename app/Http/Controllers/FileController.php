@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Request;
 use Illuminate\Mail\Message;
 use Illuminate\Support\Facades\Mail;
@@ -12,13 +11,10 @@ use Illuminate\Support\Facades\Storage;
 class FileController extends Controller
 {
 
-    function uploadFile(FormRequest $request) {
-//        $request->validate([
-//            'photo' => ['required', 'image', 'mimes:jpeg,jpg,png'],
-//        ]);
-
-        $path = '' . time() . '_' . Str::random(8) . '.' . $request->file('photo')->getClientOriginalExtension();
-        $request->file('photo')->storeAs('', $path, 'public_temporary_photos');
+    function uploadFile(Request $request) {
+        $info = pathinfo($_FILES['photo']['name']);
+        $path = '' . time() . '_' . Str::random(8) . '.' . $info['extension'];
+        move_uploaded_file($_FILES['photo']['tmp_name'], public_path('photos/temporary'));
         return ['filename' => $path];
     }
 
