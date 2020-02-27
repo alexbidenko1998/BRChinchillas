@@ -11,6 +11,10 @@ use Illuminate\Support\Facades\Storage;
 class FileController extends Controller
 {
     function uploadFile(Request $request) {
+        $request->validate([
+            'photo' => ['image', 'mimes:jpeg,jpg,png'],
+        ]);
+
         $path = '' . time() . '_' . Str::random(8) . '.' . $request->file('photo')->getClientOriginalExtension();
         $request->file('photo')->storeAs('', $path, 'public_temporary_photos');
         return ['filename' => $path];
