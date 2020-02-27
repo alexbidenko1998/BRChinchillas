@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Request;
 use Illuminate\Mail\Message;
 use Illuminate\Support\Facades\Mail;
@@ -11,7 +12,7 @@ use Illuminate\Support\Facades\Storage;
 class FileController extends Controller
 {
 
-    function uploadFile(Request $request) {
+    function uploadFile(FormRequest $request) {
 //        $request->validate([
 //            'photo' => ['required', 'image', 'mimes:jpeg,jpg,png'],
 //        ]);
